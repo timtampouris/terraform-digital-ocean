@@ -8,8 +8,9 @@ resource "digitalocean_tag" "tag-name" {
 
 # Create an instance in AMS3 region
 resource "digitalocean_droplet" "webserver" {
+  count              = 1
   image              = "ubuntu-16-04-x64"
-  name               = "webserver1"
+  name               = "webserver${count.index+1}"
   region             = "ams3"
   size               = "1024mb"
   backups            = false
