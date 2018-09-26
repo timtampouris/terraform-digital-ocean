@@ -1,6 +1,7 @@
 # terraform-digital-ocean
 Terraform configuration for provisioning an instance on Digital Ocean with Floating IP and Firewall with the basic ports open (22,53,80,443)
 
+```
 # Create a tag
 resource "digitalocean_tag" "tag-name" {
   name = "tag-name"
@@ -63,3 +64,4 @@ resource "digitalocean_firewall" "web-fw" {
     },
   ]
 }
+```
